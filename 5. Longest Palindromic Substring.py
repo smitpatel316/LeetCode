@@ -1,6 +1,7 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        if len(s) < 1: return ""
+        if len(s) < 1:
+            return ""
 
         start, end = 0, 0
         for i in range(len(s)):
@@ -23,4 +24,4 @@ class Solution:
                 start = i - int((biggest_len - 1) / 2)
                 end = i + int(biggest_len / 2)
 
-        return s[start:end + 1]
+        return s[start : end + 1]

@@ -4,6 +4,7 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution(object):
     def getIntersectionNode(self, headA, headB):
         """
@@ -21,7 +22,7 @@ class Solution(object):
         swap_A = 0
         swap_B = 0
 
-        while (True):
+        while True:
             # Scanning through Linked list A and switching to B when reaching the end
 
             # When there is an intersection

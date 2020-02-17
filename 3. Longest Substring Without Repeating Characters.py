@@ -9,7 +9,7 @@ class Solution:
             count = 0
             for j in range(i, len(s)):
                 if s[j] in seen.keys():
-                    break;
+                    break
                 else:
                     seen[s[j]] = True
                     count += 1

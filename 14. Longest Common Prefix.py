@@ -12,9 +12,9 @@ class Solution:
         prefix = strs[0]
 
         for i in range(1, len(strs)):
-            while (get_index_value(strs[i], prefix) != 0):
+            while get_index_value(strs[i], prefix) != 0:
                 print(prefix)
-                prefix = prefix[:len(prefix) - 1]
+                prefix = prefix[: len(prefix) - 1]
 
                 if prefix == "":
                     return ""

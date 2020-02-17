@@ -4,7 +4,7 @@ class Solution:
             return False
         x = str(x)
         counter = len(x) - 1
-        for i in range(int(len(x)/2)):
+        for i in range(int(len(x) / 2)):
             if x[i] != x[counter]:
                 return False
             counter -= 1
