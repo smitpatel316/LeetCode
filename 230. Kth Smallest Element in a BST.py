@@ -5,6 +5,7 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 def preorder(root):
     if root is None:
         return []
@@ -14,7 +15,8 @@ def preorder(root):
 
 class Solution:
     def kthSmallest(self, root: TreeNode, k: int) -> int:
-        return preorder(root)[k-1]
+        return preorder(root)[k - 1]
+
 
 if __name__ == "__main__":
     tree = TreeNode(5)

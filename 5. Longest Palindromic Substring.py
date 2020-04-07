@@ -24,4 +24,4 @@ class Solution:
                 start = i - int((biggest_len - 1) / 2)
                 end = i + int(biggest_len / 2)
 
-        return s[start : end + 1]
+        return s[start: end + 1]

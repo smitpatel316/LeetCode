@@ -7,7 +7,7 @@ class Solution:
         total = 0
         for (index, value) in enumerate(s):
             if index + 1 < len(s) and roman_to_int.get(value) < roman_to_int.get(
-                s[index + 1]
+                    s[index + 1]
             ):
                 total -= roman_to_int.get(value)
             else:

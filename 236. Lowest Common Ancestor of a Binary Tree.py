@@ -11,7 +11,7 @@ class Solution:
         self.ans = None
 
     def lowestCommonAncestor(
-        self, root: "TreeNode", p: "TreeNode", q: "TreeNode"
+            self, root: "TreeNode", p: "TreeNode", q: "TreeNode"
     ) -> "TreeNode":
         def recurse_tree(root):
             if not root:
