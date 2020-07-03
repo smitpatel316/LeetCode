@@ -21,10 +21,7 @@ class Solution:
 
             matrix_right = []
             for i in range(mid_row + 1):
-                row = []
-                for j in range(mid_col + 1, len(matrix[0])):
-                    row.append(matrix[i][j])
-                matrix_right.append(row)
+                matrix_right.append(matrix[i][mid_col+1:])
 
             return self.searchMatrix(matrix_below, target) or self.searchMatrix(
                 matrix_right, target
@@ -34,10 +31,7 @@ class Solution:
 
             matrix_left = []
             for i in range(mid_row, len(matrix)):
-                row = []
-                for j in range(mid_col):
-                    row.append(matrix[i][j])
-                matrix_left.append(row)
+                matrix_left.append(matrix[i][:mid_col])
 
             return self.searchMatrix(matrix_above, target) or self.searchMatrix(
                 matrix_left, target
