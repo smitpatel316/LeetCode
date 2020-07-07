@@ -16,3 +16,17 @@ class Solution:
             if count > result:
                 result = count
         return result
+
+    def optimized_solution(self, s):
+        left = right = 0
+        max_length = 0
+        seen = set()
+        while left <= right < len(s):
+            if s[right] not in seen:
+                seen.add(s[right])
+                right += 1
+                max_length = max(max_length, right - left)
+            else:
+                seen.remove(s[left])
+                left += 1
+        return max_length
