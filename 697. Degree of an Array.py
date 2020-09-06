@@ -10,11 +10,9 @@ class Solution:
         degree = max(count.values())
         for num in count:
             if count[num] == degree:
-                ans = min(ans, right[num] - left[num] +1)
+                ans = min(ans, right[num] - left[num] + 1)
         return ans
+
+
 if __name__ == "__main__":
     print(Solution().findShortestSubArray([1, 2, 2, 3, 1, 4, 2]))
-
-
-        
-

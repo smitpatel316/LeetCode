@@ -12,9 +12,9 @@ class Solution:
             perms.append(str)
         else:
             if left < n:
-                self.backtrack(n, str + '(', left + 1, right, perms)
+                self.backtrack(n, str + "(", left + 1, right, perms)
             if right < left:
-                self.backtrack(n, str + ')', left, right + 1, perms)
+                self.backtrack(n, str + ")", left, right + 1, perms)
 
 
 if __name__ == "__main__":

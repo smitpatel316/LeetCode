@@ -37,6 +37,5 @@ if __name__ == "__main__":
             print(root.val)
             inorder_print(root.right)
 
-
     root2 = Solution().buildTree([3, 9, 20, 15, 7], [9, 3, 15, 20, 7])
     inorder_print(root2)

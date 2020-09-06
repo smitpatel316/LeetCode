@@ -17,5 +17,10 @@ class Solution:
 
             path.append(node.val)
 
-            return counter + dfs_helper(node.left, path[:], _sum) + dfs_helper(node.right, path[:], _sum)
+            return (
+                counter
+                + dfs_helper(node.left, path[:], _sum)
+                + dfs_helper(node.right, path[:], _sum)
+            )
+
         return dfs_helper(root, [], sum)

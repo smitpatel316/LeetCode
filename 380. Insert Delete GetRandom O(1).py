@@ -3,7 +3,6 @@ import collections
 
 
 class RandomizedSet:
-
     def __init__(self):
         """
         Initialize your data structure here.

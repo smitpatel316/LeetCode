@@ -6,7 +6,7 @@ class Solution:
         square_sum = 0
         while True:
             for ch in str(n):
-                square_sum += (int(ch) ** 2)
+                square_sum += int(ch) ** 2
             if square_sum == 1:
                 return True
             elif square_sum in self.seen:

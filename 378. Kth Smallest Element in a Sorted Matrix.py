@@ -17,8 +17,4 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution().kthSmallest([
-        [1, 5, 9],
-        [10, 11, 13],
-        [12, 13, 15]
-    ], 8))
+    print(Solution().kthSmallest([[1, 5, 9], [10, 11, 13], [12, 13, 15]], 8))

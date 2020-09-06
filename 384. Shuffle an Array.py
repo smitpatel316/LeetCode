@@ -3,7 +3,6 @@ from typing import List
 
 
 class Solution:
-
     def __init__(self, nums: List[int]):
         self.init_nums = list(nums)
         self.nums = nums

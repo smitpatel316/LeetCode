@@ -28,4 +28,4 @@ class Solution:
 
 if __name__ == "__main__":
     Solution().findKthLargest([3, 2, 1, 5, 6, 4], 2)
-    Solution().findKthLargest([4, 5, 6, 3, 2, 3, 1, 5, 2, ], 4)
+    Solution().findKthLargest([4, 5, 6, 3, 2, 3, 1, 5, 2], 4)

@@ -22,7 +22,7 @@ class Solution:
         adj = collections.defaultdict(list)
         for word in wordList:
             for i in range(len(word)):
-                adj[word[:i]+"*"+word[i+1:]].append(word)
+                adj[word[:i] + "*" + word[i + 1 :]].append(word)
         queue = collections.deque([Word(beginWord, 1)])
         visited = set()
         while queue:
@@ -32,10 +32,10 @@ class Solution:
             if next_word.word not in visited:
                 visited.add(next_word.word)
                 for i in range(len(word)):
-                    neighbors = next_word.word[:i] + "*" + next_word.word[i+1:]
+                    neighbors = next_word.word[:i] + "*" + next_word.word[i + 1 :]
                     for neighbor in adj[neighbors]:
                         if neighbor not in visited:
-                            queue.append(Word(neighbor, next_word.changes+1))
+                            queue.append(Word(neighbor, next_word.changes + 1))
         return 0
 
 

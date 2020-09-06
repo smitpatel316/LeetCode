@@ -22,26 +22,16 @@ class Solution:
             return
         rsum -= root.val
         if root.left is not None:
-            self.helper(root.left, rsum, path+[root.left.val])
+            self.helper(root.left, rsum, path + [root.left.val])
         if root.right is not None:
-            self.helper(root.right, rsum, path+[root.right.val])
+            self.helper(root.right, rsum, path + [root.right.val])
 
 
 if __name__ == "__main__":
-    tree = TreeNode(5,
-                    TreeNode(4,
-                             TreeNode(11,
-                                      TreeNode(7),
-                                      TreeNode(2)
-                                      )
-                             ),
-                    TreeNode(8,
-                             TreeNode(13),
-                             TreeNode(4,
-                                      TreeNode(5),
-                                      TreeNode(1)
-                                      )
-                             )
-                    )
+    tree = TreeNode(
+        5,
+        TreeNode(4, TreeNode(11, TreeNode(7), TreeNode(2))),
+        TreeNode(8, TreeNode(13), TreeNode(4, TreeNode(5), TreeNode(1))),
+    )
     print(Solution().pathSum(tree, 22))
     print(Solution().pathSum(None, 0))

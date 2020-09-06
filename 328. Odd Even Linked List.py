@@ -40,6 +40,7 @@ class Solution:
 
 
 if __name__ == "__main__":
+
     def list_ll(arr):
         head = ListNode(arr[0])
         curr = head
@@ -47,7 +48,6 @@ if __name__ == "__main__":
             curr.next = ListNode(arr[i])
             curr = curr.next
         return head
-
 
     list_a = [1, 2, 3, 4, 5, 6, 7, 8]
     new_ll = Solution().oddEvenList(list_ll(list_a))

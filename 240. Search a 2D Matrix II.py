@@ -21,7 +21,7 @@ class Solution:
 
             matrix_right = []
             for i in range(mid_row + 1):
-                matrix_right.append(matrix[i][mid_col+1:])
+                matrix_right.append(matrix[i][mid_col + 1 :])
 
             return self.searchMatrix(matrix_below, target) or self.searchMatrix(
                 matrix_right, target

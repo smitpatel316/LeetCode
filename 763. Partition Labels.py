@@ -17,14 +17,14 @@ class Solution:
 
         while flag:
             last_index_of_char = S.rfind(current_char)
-            substring = S[index: last_index_of_char + 1]
+            substring = S[index : last_index_of_char + 1]
             if last_index_of_char + 1 == len(S):
                 partitions.append(len(substring))
                 break
             new_chars_seen += list(set(substring))
 
             for new_char in new_chars_seen[:]:
-                if new_char in S[last_index_of_char + 1:]:
+                if new_char in S[last_index_of_char + 1 :]:
                     new_chars_seen.remove(new_char)
                     current_char = new_char
                     break
