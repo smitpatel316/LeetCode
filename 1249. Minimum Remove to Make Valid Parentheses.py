@@ -9,16 +9,17 @@ class Solution:
                 stack.append(i)
             if s[i] == ")":
                 if len(stack) == 0:
-                    s = s[:i] + s[i+1:]
+                    s = s[:i] + s[i + 1 :]
                     i -= 1
                 else:
                     stack.pop()
             i += 1
         counter = 0
         for i in stack:
-            s = s[:(i-counter)] + s[(i+1-counter):]
+            s = s[: (i - counter)] + s[(i + 1 - counter) :]
             counter += 1
         return s
+
 
 if __name__ == "__main__":
     print(Solution().minRemoveToMakeValid("lee(t(c)o)de)"))
