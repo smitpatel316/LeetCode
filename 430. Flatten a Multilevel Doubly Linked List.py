@@ -39,6 +39,24 @@ class Solution:
                 curr = curr.next
             return head, prev
 
+    def optimized(self, head):
+        if not head:
+            return
+        stack = [head]
+        prev = Node(0)
+        while stack:
+            root = stack.pop()
+            root.prev = prev
+            prev.next = root
+            prev = root
+            if root.next:
+                stack.append(root.next)
+            if root.child:
+                stack.append(root.child)
+                root.child = None
+        head.prev = None
+        return head
+
 
 if __name__ == "__main__":
     list_1 = [1, 2, 3, 4, 5, 6]
