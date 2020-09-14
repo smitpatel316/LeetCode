@@ -2,6 +2,7 @@
 from typing import List
 import heapq
 
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -9,6 +10,7 @@ class ListNode:
 
     def __str__(self):
         return str(self.val)
+
 
 class Solution:
     def __init__(self):
@@ -36,12 +38,12 @@ class Solution:
 
 
 if __name__ == "__main__":
-    lls = [ListNode(1, ListNode(4, ListNode(5))),
-           ListNode(1, ListNode(3, ListNode(4))),
-           ListNode(2, ListNode(6))]
+    lls = [
+        ListNode(1, ListNode(4, ListNode(5))),
+        ListNode(1, ListNode(3, ListNode(4))),
+        ListNode(2, ListNode(6)),
+    ]
     ll = Solution().mergeKLists(lls)
     while ll:
         print(ll)
         ll = ll.next
-
-    print(Solution().)
