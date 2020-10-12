@@ -28,6 +28,7 @@ class LRUCache:
     def put(self, key, value):
         if key in self.dic:
             self._remove(self.dic[key])
+            self.len -= 1
         n = Node(key, value)
         self._add(n)
         self.dic[key] = n
