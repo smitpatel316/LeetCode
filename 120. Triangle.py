@@ -1,4 +1,3 @@
-
 class Solution:
     def minimumTotal(self, triangle):
         f = [0] * (len(triangle) + 1)
@@ -11,5 +10,4 @@ class Solution:
 if __name__ == "__main__":
     sol = Solution()
     print(sol.minimumTotal([[2], [3, 4], [6, 5, 7], [4, 1, 8, 3]]))
-    print(sol.minimumTotal(
-[[-1],[2,3],[1,-1,-3]]))
+    print(sol.minimumTotal([[-1], [2, 3], [1, -1, -3]]))

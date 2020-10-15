@@ -28,9 +28,9 @@ class Solution:
 
 
 if __name__ == "__main__":
-    pre_reqs = [[1,0]]
+    pre_reqs = [[1, 0]]
     print(Solution().canFinish(2, pre_reqs))
-    pre_reqs = [[1,0], [0, 1]]
+    pre_reqs = [[1, 0], [0, 1]]
     print(Solution().canFinish(2, pre_reqs))
     pre_reqs = [[1, 0], [0, 2], [2, 1]]
     print(Solution().canFinish(3, pre_reqs))

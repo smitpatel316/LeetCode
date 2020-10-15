@@ -68,4 +68,5 @@ if __name__ == "__main__":
         ["E", "E", "E", "E", "E"],
     ]
     from pprint import pprint
+
     pprint(Solution().updateBoard(b, [3, 0]))

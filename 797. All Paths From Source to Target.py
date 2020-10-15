@@ -1,6 +1,7 @@
 from typing import List
 from collections import deque
 
+
 class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
         if not graph:
@@ -15,10 +16,10 @@ class Solution:
             if val == n:
                 paths.append(path)
             for i in graph[val]:
-                q.append((i, path+[i]))
+                q.append((i, path + [i]))
         return paths
 
 
 if __name__ == "__main__":
-    graph = [[4,3,1],[3,2,4],[3],[4],[]]
+    graph = [[4, 3, 1], [3, 2, 4], [3], [4], []]
     print(Solution().allPathsSourceTarget(graph))

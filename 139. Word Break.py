@@ -13,9 +13,8 @@ class Solution:
         if word in self.dp:
             return self.dp[word]
         for i in range(len(word)):
-            if word[:i + 1] in word_dict and self.dfs(word[i + 1:], word_dict):
+            if word[: i + 1] in word_dict and self.dfs(word[i + 1 :], word_dict):
                 self.dp[word] = True
                 return True
         self.dp[word] = False
         return False
-
