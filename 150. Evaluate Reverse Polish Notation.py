@@ -7,7 +7,7 @@ class Solution:
             return 0
         stack = []
         for token in tokens:
-            if token.isdigit() or (token[0] == '-' and token[1:].isdigit()):
+            if token.isdigit() or (token[0] == "-" and token[1:].isdigit()):
                 stack.append(int(token))
             elif token == "+":
                 operand_2 = stack.pop()
@@ -29,4 +29,8 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution().evalRPN(["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"]))
+    print(
+        Solution().evalRPN(
+            ["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"]
+        )
+    )
