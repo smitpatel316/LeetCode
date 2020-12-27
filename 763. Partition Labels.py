@@ -1,39 +1,27 @@
+from collections import defaultdict
+
+
 class Solution:
     def partitionLabels(self, S: str) -> List[int]:
-        # Get new character
-        # Move forward until found all of the new character
-        # While moving forward keep track of new characters
-        # Move forward until found all of the tracked characters
-        # Stop once all tracked characters are found
-        # Repeat
-        if len(S) == 1:
-            return [1]
-        index = 0
-        counter = 0
-        new_chars_seen = []
-        current_char = S[index]
+        if not S:
+            return []
+
+        last_indexes = defaultdict(int)
+        for i in range(len(S)):
+            last_indexes[S[i]] = i
+
+        l, r = 0, last_indexes[S[0]]
         partitions = []
-        flag = True
-
-        while flag:
-            last_index_of_char = S.rfind(current_char)
-            substring = S[index : last_index_of_char + 1]
-            if last_index_of_char + 1 == len(S):
-                partitions.append(len(substring))
-                break
-            new_chars_seen += list(set(substring))
-
-            for new_char in new_chars_seen[:]:
-                if new_char in S[last_index_of_char + 1 :]:
-                    new_chars_seen.remove(new_char)
-                    current_char = new_char
-                    break
-            else:
-                partitions.append(len(substring))
-                if last_index_of_char + 1 == len(S):
-                    flag = False
-                else:
-                    index = last_index_of_char + 1
-                    current_char = S[index]
-
+        while r < len(S) and l < len(S):
+            seen = set()
+            start = l
+            while l < r:
+                if S[l] not in seen:
+                    seen.add(S[l])
+                    r = max(r, last_indexes[S[l]])
+                l += 1
+            partitions.append(r - start + 1)
+            l = r + 1
+            if l < len(S):
+                r = last_indexes[S[l]]
         return partitions
