@@ -7,68 +7,45 @@ class ListNode:
 
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        head = None
-        ptr = head
-        curr1, curr2 = l1, l2
-        while curr1 is not None and curr2 is not None:
-            temp_sum = curr1.val + curr2.val
-            new_node = None
-            if temp_sum >= 10:
-                new_node = ListNode(temp_sum - 10)
-                if curr1.next is not None:
-                    curr1.next.val += 1
-                elif curr2.next is not None:
-                    curr2.next.val += 1
-                else:
-                    curr1.next = ListNode(1)
+        carry = 0
+        head = ListNode(-1)
+        curr = head
+        while l1 and l2:
+            total = carry + l1.val + l2.val
+            if total > 9:
+                carry = 1
+                total -= 10
             else:
-                new_node = ListNode(temp_sum)
+                carry = 0
+            curr.next = ListNode(total)
+            curr = curr.next
+            l1 = l1.next
+            l2 = l2.next
 
-            if head is None:
-                head = new_node
-                ptr = head
+        while l1:
+            total = carry + l1.val
+            if total > 9:
+                carry = 1
+                total -= 10
             else:
-                ptr.next = new_node
-                ptr = ptr.next
-            curr1 = curr1.next
-            curr2 = curr2.next
+                carry = 0
+            curr.next = ListNode(total)
+            curr = curr.next
+            l1 = l1.next
 
-        while curr1 is not None:
-            new_node = None
-            if curr1.val >= 10:
-                new_node = ListNode(curr1.val - 10)
-                if curr1.next is None:
-                    curr1.next = ListNode(1)
-                else:
-                    curr1.next.val += 1
+        while l2:
+            total = carry + l2.val
+            if total > 9:
+                carry = 1
+                total -= 10
             else:
-                new_node = ListNode(curr1.val)
-            if head is None:
-                head = new_node
-                ptr = head
-            else:
-                ptr.next = new_node
-                ptr = ptr.next
-            curr1 = curr1.next
-
-        while curr2 is not None:
-            new_node = None
-            if curr2.val >= 10:
-                new_node = ListNode(curr2.val - 10)
-                if curr2.next is None:
-                    curr2.next = ListNode(1)
-                else:
-                    curr2.next.val += 1
-            else:
-                new_node = ListNode(curr2.val)
-            if head is None:
-                head = new_node
-                ptr = head
-            else:
-                ptr.next = new_node
-                ptr = ptr.next
-            curr2 = curr2.next
-        return head
+                carry = 0
+            curr.next = ListNode(total)
+            curr = curr.next
+            l2 = l2.next
+        if carry > 0:
+            curr.next = ListNode(carry)
+        return head.next
 
 
 def test_same_digits():
