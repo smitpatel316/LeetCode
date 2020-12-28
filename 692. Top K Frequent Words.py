@@ -6,10 +6,28 @@ class Solution:
     def topKFrequent(self, words: List[str], k: int) -> List[str]:
         if not k:
             return []
-        c = Counter(words)
-        most_common = c.most_common()
-        most_common.sort(key=lambda x: (x[1] * -1, x[0]))
-        return [most_common[i][0] for i in range(k)]
+
+        freq = [None] * len(words)
+        counter = Counter(words)
+
+        for word in counter:
+            if freq[counter[word]] is None:
+                freq[counter[word]] = []
+            freq[counter[word]].append(word)
+
+        res = []
+        for i in range(len(freq) - 1, -1, -1):
+            if not k:
+                break
+            if freq[i] is not None:
+                if len(freq[i]) > 1:
+                    freq[i].sort()
+                for w in freq[i]:
+                    if not k:
+                        break
+                    res.append(w)
+                    k -= 1
+        return res
 
 
 if __name__ == "__main__":
