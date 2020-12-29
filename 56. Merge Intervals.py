@@ -5,17 +5,14 @@ class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         if not intervals:
             return []
-        intervals.sort(key=lambda x: x[0])
-        i = 1
-        while i < len(intervals):
-            _interval = intervals[i]
-            _before = intervals[i - 1]
-            if _before[0] <= _interval[0] <= _before[1]:
-                intervals[i - 1][1] = max(_interval[1], _before[1])
-                intervals.pop(i)
-                i -= 1
-            i += 1
-        return intervals
+        intervals.sort(key=lambda t: t[0])
+        new_intervals = [intervals[0]]
+        for i in range(1, len(intervals)):
+            if new_intervals[-1][0] <= intervals[i][0] <= new_intervals[-1][1]:
+                new_intervals[-1][1] = max(intervals[i][1], new_intervals[-1][1])
+            else:
+                new_intervals.append(intervals[i])
+        return new_intervals
 
 
 if __name__ == "__main__":
